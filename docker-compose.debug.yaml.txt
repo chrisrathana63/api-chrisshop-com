@@ -1,0 +1,14 @@
+version: "3.4"
+
+services:
+  flaskdemo:
+    image: flaskdemo
+    build:
+      context: .
+      dockerfile: /Dockerfile
+     healthcheck:
+      test: ["executable", "arg"]
+      interval: 1m30s
+      timeout: 305
+      retries: 5
+      start_period: 30s
