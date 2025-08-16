@@ -1,0 +1,20 @@
+{
+  "name": "chris shop Dev",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "mongodb.mongodb-vscode"
+      ]
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/setup-env.sh",
+  "remoteUser": "codespace"
+}
