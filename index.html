@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chris shop • Modern Starter</title>
+  <link href="styles.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- font awesome cdn link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/ rel="stylesheet" integrity="AIzaSyAmybkwG3BUqX9mLU-2bFsifVSZwhVq4fk" crossorigin="anonymous">
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#"><span>🛍️</span> Chris Shop</a>
+
+      <nav id="menu" class="menu">
+        <a href="#features">លក្ខណៈពិសេស</a>
+        <a href="#products">ផលិតផល</a>
+        <a href="#contact">ទំនាក់ទំនង</a>
+        <button id="themeToggle" class="btn ghost">🌙</button>
+      </nav>
+
+      <button id="hamburger" class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1>បង្កើតគេហទំព័រ <span class="gradient">e-commerce</span> រហ័ស និងស្អាត</h1>
+        <p>Template ស្រាល ស្វ័យប្រវត្តិ responsive មាន UI ខ្លី ខាងក្រោមមាន card ផលិតផល និងប៊ូតុង CTA ជាស្រេច។</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#products">ចាប់ផ្តើម</a>
+          <a class="btn" href="#features">រៀនបន្ថែម</a>
+        </div>
+
+        <form id="searchForm" class="search">
+          <input id="searchInput" type="search" placeholder="ស្វែងរកផលិតផល..." />
+          <button class="btn small" type="submit">ស្វែងរក</button>
+        </form>
+      </div>
+
+      <div class="hero-card">
+        <div class="stat">
+          <strong id="statUsers">12,450+</strong>
+          <span>អ្នកប្រើ</span>
+        </div>
+        <div class="stat">
+          <strong id="statOrders">3,210+</strong>
+          <span>ការកុម្ម៉ង់</span>
+        </div>
+        <div class="badge">⚡ បង្ហាប់លឿន</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="section">
+    <div class="container">
+      <h2 class="section-title">លក្ខណៈពិសេស</h2>
+      <div class="grid features">
+        <article class="card">
+          <h3>Responsive</h3>
+          <p>រចនាដែលសមនឹងទំហំអេក្រង់គ្រប់ប្រភេទ ឆ្លើយតបលឿន។</p>
+        </article>
+        <article class="card">
+          <h3>ស្អាត & ស្រាល</h3>
+          <p>មិនពឹងផ្អែក framework ខ្លាំងៗ—CSS សុទ្ធ សម្រាប់ប្រសិទ្ធភាពខ្ពស់។</p>
+        </article>
+        <article class="card">
+          <h3>សុវត្ថិភាព</h3>
+          <p>រួចរាល់សម្រាប់ប្រើ Secrets (.env) និងកំណត់បន្ថែមបានងាយ។</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="section alt">
+    <div class="container">
+      <h2 class="section-title">ផលិតផលថ្មីៗ</h2>
+      <div id="productGrid" class="grid products">
+        <!-- Cards will be injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta-inner">
+      <h2>ត្រៀមដាក់លក់ឥឡូវនេះ?</h2>
+      <p>បង្កើតគេហទំព័រខ្លួនឯងក្នុងបន្តិចពេលប៉ុណ្ណោះ។</p>
+      <a class="btn primary large" href="#contact">ទំនាក់ទំនង</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Chris Shop</strong>
+        <p class="muted">© <span id="year"></span> គ្រប់សិទ្ធិរក្សាទុក</p>
+      </div>
+      <form id="contactForm" class="contact">
+        <input type="email" placeholder="អ៊ីមែលរបស់អ្នក" required />
+        <button class="btn small" type="submit">ជាវដំណឹង</button>
+      </form>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+<script>
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const menu = document.getElementById('menu');
+hamburger.addEventListener('click', () => menu.classList.toggle('open'));
+
+// Theme toggle (light/dark hint)
+const themeToggle = document.getElementById('themeToggle');
+let dark = true;
+themeToggle.addEventListener('click', () => {
+  dark = !dark;
+  document.documentElement.style.setProperty('--bg', dark ? '#0b0d12' : '#f7f8fb');
+  document.documentElement.style.setProperty('--text', dark ? '#e7ecf5' : '#0b0d12');
+  document.documentElement.style.setProperty('--surface', dark ? '#111521' : '#ffffff');
+  document.documentElement.style.setProperty('--card', dark ? '#161b2b' : '#ffffff');
+  themeToggle.textContent = dark ? '🌙' : '☀️';
+});
+
+// Demo products (you can replace with real data)
+const products = [
+  { id:1, name:'Tablet X', desc:'អេក្រង់ 10.5" Full HD', old:299, price:249 },
+  { id:2, name:'Smart Watch', desc:'ចាប់សញ្ញា SpO₂ និង Heart Rate', old:159, price:129 },
+  { id:3, name:'Wireless Buds', desc:'បំបាត់សំឡេងរំខាន ANC', old:99, price:79 },
+  { id:4, name:'Keyboard RGB', desc:'Hot-swap Blue Switch', old:89, price:69 },
+  { id:5, name:'Gaming Mouse', desc:'PAW3395 Sensor 26K DPI', old:79, price:59 },
+  { id:6, name:'USB-C Charger', desc:'PD 65W GaN', old:49, price:39 },
+];
+
+const grid = document.getElementById('productGrid');
+function renderProducts(list){
+  grid.innerHTML = '';
+  list.forEach(p => {
+    const el = document.createElement('article');
+    el.className = 'card product';
+    el.innerHTML = `
+      <h3>${p.name}</h3>
+      <p>${p.desc}</p>
+      <div class="price">
+        <span class="old">$${p.old}</span>
+        <span class="new">$${p.price}</span>
+      </div>
+      <div class="actions">
+        <button class="btn small">View</button>
+        <button class="btn primary small">Add to Cart</button>
+      </div>
+    `;
+    grid.appendChild(el);
+  });
+}
+renderProducts(products);
+
+// Simple search
+document.getElementById('searchForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  const filtered = products.filter(p => (p.name + ' ' + p.desc).toLowerCase().includes(q));
+  renderProducts(filtered.length ? filtered : products);
+});
+
+// Fun counters
+const users = document.getElementById('statUsers');
+const orders = document.getElementById('statOrders');
+let u = 12450, o = 3210;
+setInterval(()=>{ u += Math.floor(Math.random()*3); users.textContent = u.toLocaleString() + '+'; }, 2500);
+setInterval(()=>{ o += Math.floor(Math.random()*2); orders.textContent = o.toLocaleString() + '+'; }, 2800);
+</script>
+</body>
+</html>
