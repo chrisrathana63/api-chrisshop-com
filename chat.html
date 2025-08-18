@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<html lang="km" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" data-a11y-animated-images="system" data-a11y-link-underlines="true" data-turbo-loaded="">
+  <head>
+<title>online.shop.com|chat</title>
+<meta name="mobile-web-app-capable" content="yes"> 
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport"id="" content="width"=device-widh, initial-scale="1"/>
+<!-- font awesome cdn link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/ rel="stylesheet" integrity="AIzaSyAmybkwG3BUqX9mLU-2bFsifVSZwhVq4fk" crossorigin="anonymous"> 
+<link rel="stylesheet" href="style.css">
+<style>
+/* Container for the whole chat */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+/* Top header */
+.top {
+  background-color: #111421;
+  color: white;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.usericon {
+  background-color: white;
+  color: #1d4ed8;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+@media (max-width: 768px) {
+   .top{
+     desplay: auto;
+   }
+    .usericon {
+    border-radius: 50%;
+   }
+}
+img {
+  width: 9%;
+  height: auto;
+  border-radius: 50%; /* ធ្វើឲ្យរូបមានរាងមូល */
+  object-fit: cover; /* កាត់រូបឲ្យសមមូល */
+  display: block;    /* បង្ហាញជាប្លុក */
+}
+.username {
+  margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+#spanonline {
+  color: lightgreen;
+  font-size: 12px;
+}
+/* Chat messages area */
+.messagesdiv {
+  background-color: #ffffff;
+  padding: 16px;
+  height: 350px;
+  overflow-y: auto;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.starttext {
+  color: gray;
+  font-size: 14px;
+}
+/* Bottom input area */
+.bottom {
+  padding: 12px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  border-top: 1px solid #ddd;
+}
+.inputtext {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.send {
+  background-color: #1d4ed8;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.send:hover {
+  background-color: #2563eb;
+}
+</style>
+</head>
+<body>
+<!-- Top section of the chat window -->
+<div class="top">
+  <div>
+      <img src="image/chrisrathana.2.png" alt="">
+    <!-- User icon with "" -->
+<p class="username">Chat<br><small><span id="spanonline" >Online</span></small></p> 
+<!-- App name and status -->
+  </div>
+</div>
+
+<!-- Main chat messages container -->
+<div id="messagesdivid" class="messagesdiv" >
+  <p class="starttext" align="center">Hello,</p>
+</div>
+
+<!-- Input area for typing and sending messages -->
+<div class="bottom" align="center" >
+  <input type="text" class="inputtext" placeholder="Type your message..." id="message_box" >
+  <button class="send" onclick="send_text()">Send</button>
+</div>
+
+<script>
+/* Function to handle sending messages */
+function send_text()
+{
+  var x = document.getElementById("message_box").value; /* Gets the text input */
+  if(x!="") /* Ensures the input is not empty */
+  {
+    var elem = document.createElement('div'); /* Creates a div for the user message */
+    var text = document.createTextNode(x); /* Creates a text node with the user's input */
+    elem.appendChild(text); /* Adds the text node to the div */
+    elem.className = 'receiver-container'; /* Styles the div as a user message */
+    document.getElementById("messagesdivid").appendChild(elem); /* Adds the div to the chat window */
+    document.getElementById('message_box').value = ""; /* Clears the input box */
+    document.getElementById("messagesdivid").scrollTo(0,document.getElementById("messagesdivid").scrollHeight); /* Auto-scrolls to the latest message */
+    document.getElementById("spanonline").innerHTML = "Typing..."; /* Updates the status to "Typing" */
+    setTimeout(answer, 2000); /* Simulates typing delay */
+  }
+}
+
+/* Function to generate a bot response */
+function answer()
+{
+  randomanswer = answerlist[Math.round(Math.random()*10)]; /* Randomly selects an answer */
+  var elem = document.createElement('div'); /* Creates a div for the bot response */
+  var text = document.createTextNode(randomanswer); /* Creates a text node with the answer */
+  elem.appendChild(text); /* Adds the text node to the div */
+  elem.className = 'receiver-container2'; /* Styles the div as a bot message */
+  document.getElementById("messagesdivid").appendChild(elem); /* Adds the div to the chat window */
+  document.getElementById("messagesdivid").scrollTo(0,document.getElementById("messagesdivid").scrollHeight); /* Auto-scrolls to the latest message */
+  document.getElementById("spanonline").innerHTML = "Online"; /* Updates the status to "Online" */
+}
+</script>
+
+</body>
+
+</html
