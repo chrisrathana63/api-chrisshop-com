@@ -3,27 +3,28 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:site_name" content="online.shop">
+<meta property="og:site_name" content="onlineshop">
 <meta property="og:title" content="chrisratnana63@gmail.com">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://openonline.shop.com">
+<meta property="og:url" content="openonline.shop.com">
 <meta name="description" content="open chrisshop ask royal patner We offer a wide selection of the latest smartphones and accessories from all major brands.  Our knowledgeable staff can help you find the perfect tool to suit your needs and budget.">
 <meta property="og:image" content="fb.chrisrathana63.png">
 <meta property="og:image:alt" content="Discover Time">
-<meta name="csrf-token" content=" AeNz4Pj9rTd3c3sy7C18vytpXcF4BKbtyTKRT-MCUDx7-Q74Q8qEn6Mtv6tyxZygQc2XgoB1YfwxHk68HRo3neE6mkKr2MdWZIDypVwN_Hbo">
+  <!-- csrf-token -->
+<meta name="csrf-token" content=" ">
   <!-- Developer page -->
 <link rel="dns-prefetch" href="https://openoline.shop.com/app.firebase.com">
   <link rel="dns-prefetch" href="https://openonline.shop.com/fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://openonline.shop.com/fonts.cloudshell.com">
   <link rel="icon" href="image/chrisrathana63.png">
-  <title>onlineshop.com</title>
+  <title>openonlineshop</title>
   <link href="styles.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <!-- font awesome cdn link -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/ rel="api" integrity="AIzaSyAmybkwG3BUqX9mLU-2bFsifVSZwhVq4fk" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
 </head>
 <body>
   <!-- Header / Navbar -->
@@ -199,6 +200,65 @@ const orders = document.getElementById('statOrders');
 let u = 12450, o = 3210;
 setInterval(()=>{ u += Math.floor(Math.random()*3); users.textContent = u.toLocaleString() + '+'; }, 2500);
 setInterval(()=>{ o += Math.floor(Math.random()*2); orders.textContent = o.toLocaleString() + '+'; }, 2800);
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-98172888-1', 'auto'); ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+function openModel(name){
+    $(name).modal('toggle');
+}
+document.querySelectorAll(".form-group input").forEach((input) => {
+    input.addEventListener("focus", function () {
+        this.setAttribute("placeholder", "");
+    });
+    input.addEventListener("blur", function () {
+        if (this.value === "") {
+            this.setAttribute(
+                "placeholder",
+                `Enter Your ${
+                    this.getAttribute("name2").charAt(0).toUpperCase() +
+                    this.getAttribute("name2").slice(1)
+                }`
+            );
+        }
+    });
+});
+function ProceedBtn(element) {
+    $('#ajaxLoader').show();
+    const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    let input_email = $('#sc_mail').val();
+    if (String(input_email).toLowerCase().match(re)) {
+        // console.log('input_email => ',input_email);
+        location.href = `/auth//callback?input_email=${input_email}`;
+    }
+    else{
+        element.disabled = false;
+        $('#ajaxLoader').hide();
+         console.log('matched');
+        $('#fill_model_error_msg').text('please provide valid email !');
+    }
+}
+function togglePasswordView(fieldId,btnClass){
+        if($(fieldId).attr('type') == 'password'){
+            $(fieldId).attr('type','text')
+        }
+        else{
+            $(fieldId).attr('type','password')
+        }
+        $(btnClass).toggle();
+    }
+</script>
+<script type="text/javascript">
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            console.log('removing');
+            for (let registration of registrations) {
+                registration.unregister()
+            }
+        })
+    }
 </script>
 </body>
   </div></div></div></div></div></div></head></div></div></div></div></div></body>
