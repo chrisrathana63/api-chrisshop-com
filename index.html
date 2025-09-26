@@ -13,9 +13,9 @@
   <!-- csrf-token -->
  <meta name="csrf-token" content=" ">
   <!-- Developer page -->
-  <link rel="dns-prefetch" href="https://Api.chrisshop.com/app.firebase.com">
-  <link rel="dns-prefetch" href="https://Api.chrisshop.com/fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://Api.chrisshop.com/fonts.cloudshell.com">
+  <link rel="dns-prefetch" href="https://Api.chrisshop.com/css/style.css/app.firebase.com">
+  <link rel="dns-prefetch" href="https://Api.chrisshop.com/css/style.css/fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://Api.chrisshop.com/css/style.css/fonts.cloudshell.com">
   <link rel="icon" href="image/chrisrathana63.png">
   <title>Api.chrisshop.com</title>
   <link href="styles.css" rel="stylesheet" />
@@ -25,7 +25,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <!-- font awesome cdn link -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
-<link href="https://www.Api.chrisshop.com/app.js/node/mein.js/&token="Api"crossorigin="anonymous">
+<link href="https://www.api.chrisshop.com/app.js/node/mein.js/&token="Api"crossorigin="anonymous">
 </head>
 <body>
   <!-- Header / Navbar -->
@@ -132,7 +132,7 @@
     </div>
   </footer>
 
-<script src="https://Api.chrisshop.com/app/js/mine.js"></script>
+<script src="https://Api.chrisshop.com/app/js//node/mine.js"></script>
 <script>
 // Year
 document.getElementById('year').textContent = new Date().getFullYear();
@@ -190,7 +190,7 @@ renderProducts(products);
 // Simple search
 document.getElementById('searchForm').addEventListener('submit', e => {
   e.preventDefault();
-  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  const q = document.getElementById('searchInput').value.strim().toLowerCase();
   const filtered = products.filter(p => (p.name + ' ' + p.desc).toLowerCase().includes(q));
   renderProducts(filtered.length ? filtered : products);
 });
@@ -230,8 +230,8 @@ function ProceedBtn(element) {
     $('#ajaxLoader').show();
     const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     let input_email = $('#sc_mail').val();
-    if (String(input_email).toLowerCase().match(re)) {
-        // console.log('input_email => ',input_email);
+    if (String(input_email).toLowerCase().match(srt)) {
+        console.log('input_email => ',input_email);
         location.href = `/auth//callback?input_email=${input_email}`;
     }
     else{
@@ -254,7 +254,7 @@ function togglePasswordView(fieldId,btnClass){
 <script type="text/javascript">
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations().then(function(registrations) {
-            console.log('removing');
+            console.log('hello would');
             for (let registration of registrations) {
                 registration.unregister()
             }
