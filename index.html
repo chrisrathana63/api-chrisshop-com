@@ -201,65 +201,6 @@ const orders = document.getElementById('statOrders');
 let u = 12450, o = 3210;
 setInterval(()=>{ u += Math.floor(Math.random()*3); users.textContent = u.toLocaleString() + '+'; }, 2500);
 setInterval(()=>{ o += Math.floor(Math.random()*2); orders.textContent = o.toLocaleString() + '+'; }, 2800);
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-98172888-1', 'auto'); ga('send', 'pageview');
-</script>
-<script type="text/javascript">
-function openModel(name){
-    $(name).modal('toggle');
-}
-document.querySelectorAll(".form-group input").forEach((input) => {
-    input.addEventListener("focus", function () {
-        this.setAttribute("placeholder", "");
-    });
-    input.addEventListener("blur", function () {
-        if (this.value === "") {
-            this.setAttribute(
-                "placeholder",
-                `Enter Your ${
-                    this.getAttribute("name2").charAt(0).toUpperCase() +
-                    this.getAttribute("name2").slice(1)
-                }`
-            );
-        }
-    });
-});
-function ProceedBtn(element) {
-    $('#ajaxLoader').show();
-    const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    let input_email = $('#sc_mail').val();
-    if (String(input_email).toLowerCase().match(srt)) {
-        console.log('input_email => ',input_email);
-        location.href = `/auth//callback?input_email=${input_email}`;
-    }
-    else{
-        element.disabled = false;
-        $('#ajaxLoader').hide();
-         console.log('matched');
-        $('#fill_model_error_msg').text('please provide valid email !');
-    }
-}
-function togglePasswordView(fieldId,btnClass){
-        if($(fieldId).attr('type') == 'password'){
-            $(fieldId).attr('type','text')
-        }
-        else{
-            $(fieldId).attr('type','password')
-        }
-        $(btnClass).toggle();
-    }
-</script>
-<script type="text/javascript">
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then(function(registrations) {
-            console.log('hello would');
-            for (let registration of registrations) {
-                registration.unregister()
-            }
-        })
-    }
 </script>
 </body>
   </div></div></div></div></div></div></head></div></div></div></div></div></body>
